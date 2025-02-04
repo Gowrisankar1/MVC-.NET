@@ -1,0 +1,38 @@
+﻿@model MVC.NET.Models.INSERTCS
+@{
+    ViewBag.Title = "Insert_pageload";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Insert_pageload</h2>
+
+<div>
+    @using (Html.BeginForm("Insert_click", "insertDB", FormMethod.Post))
+    {
+        <div>
+            <label>Name:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.name)
+            @Html.ValidationMessageFor(m => m.name)
+        </div>
+        <div>
+            <label>Age:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.age)
+            @Html.ValidationMessageFor(m => m.age)
+        </div>
+        <div>
+            <label>Address:</label>
+        </div>
+        <div>
+            @Html.TextAreaFor(m => m.address)
+            @Html.ValidationMessageFor(m => m.address)
+        </div>
+        <div>
+            <input type="submit" value="Insert" />
+            @Html.DisplayFor(m =>m.msg)
+        </div>
+    }
+</div>
